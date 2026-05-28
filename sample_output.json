@@ -1,0 +1,22 @@
+{
+  "filename": "Sample Policy Document.pdf",
+  "upload_path": "uploads/20260528T223609Z_Sample_Policy_Document.pdf",
+  "output_path": "outputs/20260528T223609Z_Sample_Policy_Document.json",
+  "policy_number": "VF99999990",
+  "insured_name": "LELAND STANFORD",
+  "effective_date": "MAY 1, 2008",
+  "expiration_date": "MAY 1, 2068",
+  "premium": {
+    "interval": "MONTHLY",
+    "amount": "$36.00"
+  },
+  "coverage_limits": [
+    "Face amount: $500,000",
+    "Coverage to age 95"
+  ],
+  "exclusions": [
+    "Termination: This policy will terminate and, except for the limited right to reinstate the policy, all rights of the owner will end upon the earliest of the following events:; \u2022 The death of the Insured; \u2022 The Expiration Date, as shown in the Policy Specifications; \u2022 Conversion of this policy, as provided in the Conversion provision; \u2022 Lapse of this policy, as provided in the Grace Period and Lapse provision; \u2022 Successful contest of this policy as described in the Incontestability provision; and; \u2022 Our receipt of your Written Request to terminate the policy.; Upon termination we will refund to you the pro-rata portion of any premium you have paid that applies to a period beyond the end of the policy month in which the policy terminates.",
+    "Suicide Exclusion: If the Insured dies by suicide, while sane or insane, within two years of the Policy Date, the Death Benefit Proceeds will be limited to an amount equal to the sum of the premiums paid. If this policy has been reinstated and the Insured dies by suicide, while sane or insane, within two years of the latest reinstatement date, the Death Benefit Proceeds will be limited to an amount equal to the sum of the premiums paid since such date."
+  ],
+  "summary": "LELAND STANFORD is covered by policy VF99999990, effective MAY 1, 2008 and expiring MAY 1, 2068. The monthly premium is $36.00. Key coverage limits include Face amount: $500,000; Coverage to age 95. Potential exclusions or limiting provisions include Termination: This policy will terminate and, except for the limited right to reinstate the policy, all rights of the owner will end upon the earliest of the following events:; \u2022 The death of the Insured; \u2022 The Expiration Date, as shown in the Policy Specifications; \u2022 Conversion of this policy, as provided in the Conversion provision; \u2022 Lapse of this policy, as provided in the Grace Period and Lapse provision; \u2022 Successful contest of this policy as described in the Incontestability provision; and; \u2022 Our receipt of your Written Request to terminate the policy.; Upon termination we will refund to you the pro-rata portion of any premium you have paid that applies to a period beyond the end of the policy month in which the policy terminates; Suicide Exclusion: If the Insured dies by suicide, while sane or insane, within two years of the Policy Date, the Death Benefit Proceeds will be limited to an amount equal to the sum of the premiums paid. If this policy has been reinstated and the Insured dies by suicide, while sane or insane, within two years of the latest reinstatement date, the Death Benefit Proceeds will be limited to an amount equal to the sum of the premiums paid since such date."
+}
