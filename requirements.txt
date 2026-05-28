@@ -22,6 +22,7 @@ pycparser==3.0
 pydantic==2.13.4
 pydantic_core==2.46.4
 pypdfium2==5.8.0
+pytest==9.0.2
 python-multipart==0.0.29
 sniffio==1.3.1
 starlette==1.0.0

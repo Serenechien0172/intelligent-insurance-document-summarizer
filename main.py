@@ -7,7 +7,8 @@ from typing import Any
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from pydantic import BaseModel
 
-from extractor import extract_policy_fields, extract_text_from_pdf, generate_summary
+from extractor import extract_policy_fields, extract_text_from_pdf
+from summarizer import get_summarizer
 
 
 app = FastAPI(title="Insurance Document Summarizer")
@@ -34,6 +35,7 @@ class PolicySummaryResponse(BaseModel):
     coverage_limits: list[str]
     exclusions: list[str]
     summary: str
+    summary_provider: str
 
 
 @app.get("/health")
@@ -61,7 +63,8 @@ async def upload_policy(file: UploadFile = File(...)) -> PolicySummaryResponse:
             raise HTTPException(status_code=422, detail="PDF contains no extractable text.")
 
         fields = extract_policy_fields(text)
-        summary = generate_summary(fields)
+        summarizer = get_summarizer()
+        summary = summarizer.summarize(fields, text)
 
         response = PolicySummaryResponse(
             filename=filename,
@@ -75,12 +78,15 @@ async def upload_policy(file: UploadFile = File(...)) -> PolicySummaryResponse:
             coverage_limits=fields.get("coverage_limits", []),
             exclusions=fields.get("exclusions", []),
             summary=summary,
+            summary_provider=summarizer.name,
         )
 
         _save_result(response, output_path)
         return response
     except HTTPException:
         raise
+    except ValueError as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"Failed to process PDF: {exc}") from exc
 

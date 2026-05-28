@@ -35,44 +35,9 @@ def extract_policy_fields(text: str) -> dict[str, Any]:
 
 
 def generate_summary(fields: dict[str, Any]) -> str:
-    parts: list[str] = []
+    from summarizer import LocalSummarizer
 
-    insured = fields.get("insured_name") or "The insured"
-    policy_number = fields.get("policy_number")
-    effective_date = fields.get("effective_date")
-    expiration_date = fields.get("expiration_date")
-    premium = fields.get("premium")
-    coverage_limits = fields.get("coverage_limits") or []
-    exclusions = fields.get("exclusions") or []
-
-    opening = f"{insured} is covered by"
-    if policy_number:
-        opening += f" policy {policy_number}"
-    else:
-        opening += " this policy"
-    if effective_date:
-        opening += f", effective {effective_date}"
-    if expiration_date:
-        opening += f" and expiring {expiration_date}"
-    opening += "."
-    parts.append(opening)
-
-    if premium:
-        interval = premium.get("interval")
-        amount = premium.get("amount")
-        label = f"{interval.lower()} premium" if interval else "premium"
-        parts.append(f"The {label} is {amount}.")
-
-    if coverage_limits:
-        parts.append("Key coverage limits include " + "; ".join(coverage_limits) + ".")
-
-    if exclusions:
-        exclusion_text = "; ".join(item.rstrip(".") for item in exclusions)
-        parts.append("Potential exclusions or limiting provisions include " + exclusion_text + ".")
-    else:
-        parts.append("No explicit exclusions section was detected in the extracted text.")
-
-    return " ".join(parts)
+    return LocalSummarizer().summarize(fields, "")
 
 
 def _normalize_text(text: str) -> str:
