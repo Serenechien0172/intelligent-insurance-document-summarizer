@@ -6,7 +6,7 @@ This project is designed as a take-home case study: it favors a small, understan
 
 ## Project Overview
 
-The API accepts one PDF insurance document, extracts text with `pdfplumber`, parses core policy fields with regular expressions, generates a short plain-English summary through a summarization provider, and persists both the uploaded PDF and the extracted JSON result.
+The API accepts one PDF insurance document, extracts text with `pdfplumber`, parses core policy fields with regular expressions, generates a short plain-English summary through a summarization provider, and persists both the uploaded PDF and the extracted JSON result. The project includes automated tests, OpenAPI documentation, and a pluggable summarization architecture.
 
 Extracted fields:
 
