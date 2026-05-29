@@ -206,7 +206,7 @@ To add OpenAI later, create an `OpenAISummarizer` class in `summarizer.py` with 
 
 To add Anthropic later, create an `AnthropicSummarizer` class with the same method, read `ANTHROPIC_API_KEY` from the environment, and register it in `get_summarizer()`. As with OpenAI, keep policy numbers, dates, premiums, coverage limits, and exclusions sourced from regex extraction rather than relying on the model for exact structured data.
 
-## Limitations
+## Known Limitations
 
 - Works best with digitally generated PDFs that contain selectable text.
 - Scanned image-only PDFs will return `422` unless OCR is added.
